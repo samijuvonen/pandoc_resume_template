@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <!-- html and css from Thomas Hardy
+         at http://www.thomashardy.me.uk/free-responsive-html-css3-cv-template
+         modified by Sami Juvonen -->
+    <head>
+        <title>$firstname$ $lastname$ - Resume</title>
+
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="description" content="The Resume of $firstname$ $lastname$"/>
+        <meta charset="UTF-8"> 
+        $for(author-meta)$
+        <meta name="author" content="$author-meta$">
+        $endfor$
+        $for(css)$
+        <link type="text/css" rel="stylesheet" href="$css$">
+        $endfor$
+        $if(quotes)$
+        <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+        $endif$
+        <link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        $for(header-includes)$
+        $header-includes$
+        $endfor$
+    </head>
+    <body id="top">
+        $for(include-before)$
+        $include-before$
+        $endfor$
+        <div id="cv" class="instaFade">
+	        <div class="mainDetails">
+		        <div id="name">
+			        <h1 class="quickFade delayTwo">$firstname$ $lastname$</h1>
+                    $if(jobtitle)$
+                    <h2 class="quickFade delayThree">$jobtitle$</h2>
+                    $endif$
+		        </div>
+                <div id="contactDetails" class="quickFade delayFour">
+			        <ul>
+                        <li>✉ <a href="mailto:$email$">$email$</a></li>
+                        <li>☎ $phone$</li>
+                        <li>🌎 <a href="http://$homepage$">$homepage$</a></li>
+                        <li>Linkedin: <a href="https://www.linkedin.com/in/$linkedin$">$linkedin$</a></li>
+                        <li>GitHub: <a href="https://github.com/$github$">$github$</a></li>
+			        </ul>
+		        </div>		
+		        <div class="clear"></div>
+	        </div>
+	
+	        <div id="mainArea" class="quickFade delayFive">
+		        <section>
+			        <article>
+				        <div class="sectionTitle">
+					        <h1>Summary</h1>
+				        </div>
+				
+				        <div class="sectionContent">
+					        <p>$summary$</p>
+				        </div>
+			        </article>
+			        <div class="clear"></div>
+		        </section>
+		
+		
+		        <section>
+			        <div class="sectionTitle">
+				        <h1>Experience</h1>
+			        </div> 
+			        <div class="sectionContent">
+                        $for(experience)$
+				        <article>
+					        <h2>$experience.title$ at $experience.employer$</h2>
+					        <p class="subDetails">$experience.dates$</p>
+                            $for(experience.description)$
+                            <p>$experience.description$</p>
+                            $endfor$
+				        </article>
+                        $endfor$
+					</div>
+			        <div class="clear"></div>
+		        </section>
+
+		        <section>
+			        <div class="sectionTitle">
+				        <h1>Certifications</h1>
+			        </div> 
+			        <div class="sectionContent">
+                        <article>
+                            <ul>
+                                $for(certifications)$
+                                <li>$certifications.description$</li>
+                                $endfor$
+                            </ul>
+                        </article>
+			        </div>
+			        <div class="clear"></div>
+		        </section>
+
+		        <section>
+			        <div class="sectionTitle">
+				        <h1>Interests</h1>
+			        </div>			
+			        <div class="sectionContent">
+				        <article>
+					        <p>$interests$.</p>
+				        </article>
+					</div>
+			        <div class="clear"></div>
+		        </section>
+		
+	        </div>
+        </div>
+
+
+        $for(include-after)$
+        $include-after$
+        $endfor$
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
